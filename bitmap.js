@@ -4,4 +4,5 @@
 const fileHelper = require('./lib/bitmap-file-helper.js');
 // const Bitmap = require('./model/bitmap-constructor.js');
 
-fileHelper(`${__dirname}/img/palette-bitmap.bmp`, 'green', 'hello');
+// fileHelper(`${__dirname}/img/palette-bitmap.bmp`, 'green', 'hello');
+fileHelper(`${__dirname}/img/optimus-prime.bmp`, 'green', 'hello');
