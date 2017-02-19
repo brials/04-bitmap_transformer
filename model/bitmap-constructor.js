@@ -52,8 +52,13 @@ Bitmap.blueTransform = function blueTransform(color) {
   return [255, blue(color[1], .5), blue(color[2], .5), color[3]];
 };
 Bitmap.grayTransform = function grayTransform(color) {
-  function gray(color, level) {
-    return Math.min(255, Math.floor(color * level));
-  }
-  return [gray(color[0], .15), gray(color[1], .1), gray(color[2], .12), color[3]];
+  let max = color.reduce((max, channel) => Math.max(max, channel), 0);
+  let grayChannel = Math.round(max * .7);
+  return [ grayChannel, grayChannel, grayChannel, color[3]];
 };
+// Bitmap.grayTransform = function grayTransform(color) {
+//   function gray(color, level) {
+//     return .Math.min(255, Math.floor(color * level));
+//   }
+//   return [gray(color[0], .15), gray(color[1], .1), gray(color[2], .12), color[3]];
+// };
